@@ -20,6 +20,20 @@ To complete this project, you should understand Python programming, data manipul
 - Check out  [CrewAI](https://docs.crewai.com/)
 - Project code [GitHub](https://github.com/Bhavik-Jikadara/Content-Generation-Workflow.git)
 
+-----------------------------------------------------------------------------------------------------------------
+## Notes: This step is very import:
+### [Click here](https://www.c-sharpcorner.com/article/how-to-addedit-path-environment-variable-in-windows-11/) to set three API_KEYs in the Environment Variable, and use this link as a reference.
+* [Click here to OpenAI API Key](https://platform.openai.com/api-keys)
+
+    $ OPENAI_API_KEY="Your-API-key" 
+* [Click here to Google API Key](https://aistudio.google.com/)  
+
+    $ GOOGLE_API_KEY="Your-API-key" 
+* [Click here to Serper API Key](https://serper.dev/api-key)  
+ 
+    $ SERPER_API_KEY="Your-API-key"
+-----------------------------------------------------------------------------------------------------------------         
+
 ### Step 1: Clone the repository
     $ git clone https://github.com/Bhavik-Jikadara/Content-Generation-Workflow.git
 
@@ -32,4 +46,4 @@ To complete this project, you should understand Python programming, data manipul
     $ pip install -r requirements.txt
 
 ### Step 4: Type this command and run the project:
-    $ streamlit run streamlit_app.py
+    $ streamlit run Home.py
