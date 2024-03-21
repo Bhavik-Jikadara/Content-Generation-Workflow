@@ -46,11 +46,10 @@ try:
 
     content_personalization_specialist_task = CreateTask(
         """
-        {topic} Segmenting audiences based on their interactions, preferences, and behaviors.
+        Segmenting audiences based on their interactions, preferences, and behaviors of {topic}.
         Customizing content delivery to different audience segments to increase engagement and conversion rates.
-        Testing and optimizing personalization strategies for maximum impact.
         """,
-        'A 5 paragraph article on {topic} advancements formatted as markdown.',
+        'A 4 paragraph article on {topic} advancements formatted as markdown.',
         search_tool,
         content_personalization_specialist,
     ).create_task()
