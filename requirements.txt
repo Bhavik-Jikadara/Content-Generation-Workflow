@@ -4,3 +4,4 @@ openai
 streamlit
 duckduckgo-search
 langchain-google-genai
+python-dotenv
