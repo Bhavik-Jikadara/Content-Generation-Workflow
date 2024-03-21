@@ -1,5 +1,5 @@
 crewai
-'crewai[tools]'
+crewai[tools]
 openai
 streamlit
 duckduckgo-search
