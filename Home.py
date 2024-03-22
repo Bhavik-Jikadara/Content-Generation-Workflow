@@ -3,7 +3,7 @@ Initiate the process with your enhanced crew ready. Observe as your agents colla
 """
 from src.components.process import researcher_crew, writer_crew, SEO_analyst_crew, visual_content_creator_crew, content_curator_crew, content_personalization_specialist_crew, all_crew
 import streamlit as st
-from src.components.image_geneerate import generate_image
+from components.image_generate import generate_image
 
 st.set_page_config(
     page_title="Article Generate",

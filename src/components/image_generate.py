@@ -17,4 +17,5 @@ def generate_image(inputs: str):
     })
     # You can access the image with PIL.Image for example
     image = Image.open(io.BytesIO(image_bytes))
+    image.save(f"outputs/generate_{inputs}.jpg")
     return image
