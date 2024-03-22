@@ -36,6 +36,7 @@ To complete this project, you should understand Python programming, data manipul
 
 ### Step 1: Clone the repository
     $ git clone https://github.com/Bhavik-Jikadara/Content-Generation-Workflow.git
+    $ cd Content-Generation-Workflow/
 
 ### Step 2: Create a virtualenv (windows user)
     $ pip install virtualenv
