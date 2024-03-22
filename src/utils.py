@@ -20,12 +20,13 @@ class CreateTask:
         self.tool = tool
         self.agent = agent
 
-    def create_task(self):
+    def create_task(self, output_file='outputs/new-blog-post.md'):
         task = Task(
             description=self.description,
             expected_output=self.expected_output,
             tools=[self.tool],
             agent=self.agent,
+            output_file=output_file
         )
         return task
 

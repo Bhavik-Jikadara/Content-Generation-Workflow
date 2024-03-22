@@ -44,7 +44,7 @@ content_curator_crew = Crew(
 
 # all crew
 all_crew = Crew(
-    agents=[researcher, writer],
-    tasks=[research_assistant_task, content_creator_task, seo_analyst_task],
+    agents=[researcher, writer, seo_analyst, visual_content_creator, content_curator, content_personalization_specialist],
+    tasks=[research_assistant_task, content_creator_task, seo_analyst_task, visual_content_creator_task, content_curator_task, content_personalization_specialist_task],
     process=Process.sequential
 )

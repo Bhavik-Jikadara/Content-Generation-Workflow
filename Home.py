@@ -11,16 +11,18 @@ st.set_page_config(
 )
 
 st.header("Content Generation Workflow using CrewAI")
+st.markdown("This workflow should autonomously process input topics, conduct research, plan content, generate images, optimize for SEO, and perform final editorial checks.")
 
 topic = st.text_area(
     label="Enter the topic: ",
-    placeholder="Enter the name of the topic to generate the article"
+    placeholder="Enter the name of the topic to generate the article",
+    height=200
 )
 st.write(f'You wrote {len(topic.split())} words.')
 
 selected_box = st.selectbox(
     "Choose agent",
-    ('Researcher', 'Writer', 'SEO Analyst', 'Visual Content Creator', 'Content Curator', 'Content Personalization Specialist')
+    ('Researcher', 'Writer', 'SEO Analyst', 'Visual Content Creator', 'Content Curator', 'Content Personalization Specialist', 'All tasks together')
 )
 
 def generate_content(topic, crew):
@@ -46,3 +48,6 @@ if st.button("Generate Article"):
 
     if selected_box == "SEO Analyst":
         st.write(generate_content(topic=topic, crew=SEO_analyst_crew))
+
+    if selected_box == "All tasks together":
+        st.write(generate_content(topic=topic, crew=all_crew))
