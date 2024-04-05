@@ -5,3 +5,5 @@ streamlit
 duckduckgo-search
 langchain-google-genai
 python-dotenv
+requests
+beautifulsoup4
