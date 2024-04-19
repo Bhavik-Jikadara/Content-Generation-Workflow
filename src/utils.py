@@ -1,8 +1,10 @@
 from langchain_google_genai import GoogleGenerativeAI
+from langchain_openai import ChatOpenAI
 from crewai_tools import SerperDevTool
 from crewai import Task, Agent
 import os
-
+from dotenv import load_dotenv
+load_dotenv()
 # API SETUP
 google_api_key = os.getenv("GOOGLE_API_KEY")
 
