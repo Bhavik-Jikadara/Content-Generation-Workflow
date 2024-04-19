@@ -8,11 +8,9 @@ try:
         role='Assists in content research by gathering, analyzing, and summarizing information on specified {topic}.',
         goal="""
                 Conducting keyword research and identifying trending topics relevant to the content strategy.
-                Providing summaries and briefs to human content creators to streamline their research phase.
             """,
         backstory=(
-            "Driven by curiosity, you're at the forefront of"
-            "innovation, eager to explore and share knowledge that could change"
+            "Providing summaries and briefs to human content creators to streamline their research phase."
         ),
         model=llm
     ).create_agent()
@@ -23,11 +21,9 @@ try:
         goal="""
                 Creating initial content drafts for various formats (e.g., blog posts, articles, social media updates) using natural language generation technologies.
                 Adhering to brand voice, style guides, and content objectives outlined by content strategists.
-                Generating creative ideas for content, including headlines, taglines, and calls-to-action.
             """,
         backstory=(
-            "With a flair for simplifying complex topics, you craft"
-            "engaging narratives that captivate and educate, bringing new"
+            "Generating creative ideas for content, including headlines, taglines, and calls-to-action."
         ),
         model=llm
     ).create_agent()
@@ -37,11 +33,9 @@ try:
         goal="""
                 Analyzing content for SEO best practices, including keyword density, meta descriptions, and title tags.
                 Recommending improvements to enhance content ranking on search engines.
-                Monitoring content performance and providing insights for content optimization.
             """,
         backstory=(
-            "Driven by curiosity, you're at the forefront of"
-            "innovation, eager to explore and share knowledge that could change"
+            "Monitoring content performance and providing insights for content optimization."
         ),
         model=llm
     ).create_agent()
@@ -49,11 +43,10 @@ try:
     content_personalization_specialist = CreateAgent(
         role="{topic} content to individual users\' preferences, behaviors, and historical interactions with the brand.",
         goal="""
-                Segmenting audiences based on their interactions, preferences, and behaviors.
+                Segmenting audiences based on their interactions, preferences, and behaviors. Customizing content delivery to different audience segments to increase engagement and conversion rates.
             """,
         backstory=(
-            "Driven by curiosity, you're at the forefront of"
-            "innovation, eager to explore and share knowledge that could change"
+            "Testing and optimizing personalization strategies for maximum impact."
         ),
         model=llm
     ).create_agent()
@@ -63,11 +56,9 @@ try:
         goal="""
                 Creating {topic} visual content based on textual content themes and highlights.
                 Adhering to brand visual guidelines and aesthetics.
-                Automatically resizing and adapting visual content for different platforms and devices.
             """,
         backstory=(
-            "Driven by curiosity, you're at the forefront of"
-            "innovation, eager to explore and share knowledge that could change"
+            "Automatically resizing and adapting visual content for different platforms and devices."
         ),
         model=llm
     ).create_agent()
@@ -75,12 +66,11 @@ try:
     content_curator = CreateAgent(
         role="Identifies and curates relevant external {topic} to share with the audience, enhancing brand authority and engagement.",
         goal="""
-                Scanning various sources for high-quality, relevant content.
-                Summarizing and contextualizing curated content for different platforms.
-                Scheduling curated content for publication in line with the content calendar.
+                Performing detailed grammar and spelling checks to ensure error-free content.
+                Making stylistic adjustments to align content with the publication's tone and style guidelines.
             """,
         backstory=(
-            "innovation, eager to explore and share knowledge that could change"
+            "Conducting final reviews to certify content readiness for publication."
         ),
         model=llm
     ).create_agent()
