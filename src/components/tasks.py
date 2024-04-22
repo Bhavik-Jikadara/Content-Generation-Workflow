@@ -38,7 +38,7 @@ try:
         Analyzing content for SEO best practices, including keyword density, meta descriptions, and title tags.
         Recommending improvements to enhance content ranking on search engines.
         """,
-        "A 2 paragraph article on {topic} advancements formatted as markdown. Optimizes content for search engines and improves content discoverability online.",
+        "A 4 paragraph article on {topic} advancements formatted as markdown. Optimizes content for search engines and improves content discoverability online.",
         search_tool,
         seo_analyst
     ).create_task()
