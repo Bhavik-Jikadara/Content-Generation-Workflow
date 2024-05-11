@@ -3,7 +3,9 @@ Initiate the process with your enhanced crew ready. Observe as your agents colla
 """
 from src.components.process import all_crew
 import streamlit as st
-from src.components.image_generate import generate_image
+# from src.components.image_generate import generate_image
+from dotenv import load_dotenv
+load_dotenv()
 
 st.set_page_config(
     page_title="Article Generate",
@@ -16,14 +18,14 @@ st.markdown("This workflow should autonomously process input topics, conduct res
 topic = st.text_area(
     label="Enter the topic: ",
     placeholder="Enter the name of the topic to generate the article",
-    height=200
+    height=175
 )
 st.write(f'You wrote {len(topic.split())} words.')
 
 
 def generate_content(topic, crew):
     result = crew.kickoff({"topic": topic})
-    st.image(generate_image(topic).resize((800, 400)), caption=topic)
+    # st.image(generate_image(topic).resize((800, 400)), caption=topic)
     return result
 
 
