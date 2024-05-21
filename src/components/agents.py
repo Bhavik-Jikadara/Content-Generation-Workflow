@@ -1,9 +1,8 @@
 from crewai import Agent
-from src.utils import llm, search_tool
+from src.utils import llm, search_tool, step_callback
 from src.exception import CustomException
 from src.components.image_generate import image_generate
 import sys
-
 
 
 try:
@@ -29,7 +28,9 @@ try:
         tools=[search_tool],
         verbose=True,
         max_iter=5,
-        allow_delegation=True
+        allow_delegation=True,
+        step_callback=lambda step: step_callback(
+            agent_output=step, agent_name="Research Agent")
     )
 
     content_creator_agent = Agent(
@@ -45,19 +46,23 @@ try:
         llm=llm,
         verbose=True,
         max_iter=5,
-        allow_delegation=True
+        allow_delegation=True,
+        step_callback=lambda step: step_callback(
+            agent_output=step, agent_name="Content Creator Agent")
     )
 
     content_curator_agent = Agent(
-        role = "Content Curatorr",
-        goal = "Identifies and curates relevant external content to share with the audience, enhancing brand authority and engagement.",
+        role="Content Curatorr",
+        goal="Identifies and curates relevant external content to share with the audience, enhancing brand authority and engagement.",
         backstory="""
         - The AI Agent continuously monitors a wide array of sources such as websites, blogs, social media platforms, news outlets, and databases. It uses advanced algorithms to filter through this vast amount of information and identify content that is relevant to the target audience or specific topic of interest.
         
         - Once relevant content is identified, the AI Agent analyzes and processes it to generate concise summaries and provide context. It may extract key points, insights, or quotes from articles, videos, or other media and reframe them in a format suitable for the intended audience or platform. This ensures that the curated content is digestible and adds value to the audience.
 
         - Content Curator AI Agents are capable of tailoring curated content for various platforms and formats. Whether it's social media posts, blog articles, email newsletters, or video scripts, the AI Agent optimizes the content to fit the style, tone, and requirements of each platform.
-        """
+        """,
+        step_callback=lambda step: step_callback(
+            agent_output=step, agent_name="Content Curator Agent")
     )
 
     visual_content_creator_agent = Agent(
@@ -71,9 +76,10 @@ try:
         - **Automatically Resizing and Adapting Visual Content for Different Platforms and Devices:** Visual content creators optimize assets for various screen sizes and platforms, ensuring they look great and perform well across devices. Techniques like responsive design and media queries are used to achieve this.
         """,
         verbose=True,
-        tools=[image_generate]
+        tools=[image_generate],
+        step_callback=lambda step: step_callback(
+            agent_output=step, agent_name="Visual Content creator Agent")
     )
-
 
     seo_analyst_agent = Agent(
         role="SEO Analyst",
@@ -86,12 +92,14 @@ try:
         - **Monitoring Content Performance and Providing Insights:** Content analysts continuously monitor content performance, including organic search traffic and user engagement metrics. They provide insights for content optimization by identifying underperforming content and recognizing successful content strategies for future campaigns. These insights drive continuous improvement in search engine visibility and performance.
         """,
         verbose=True,
-        allow_delegation=True
+        allow_delegation=True,
+        step_callback=lambda step: step_callback(
+            agent_output=step, agent_name="SEO Analyst Agent")
     )
 
     editorial_assistant_agent = Agent(
-        role = "Editorial Assistant",
-        goal= "Your goal is to implement a review process to check the content for accuracy, coherence, grammar, and style. Make necessary adjustments.",
+        role="Editorial Assistant",
+        goal="Your goal is to implement a review process to check the content for accuracy, coherence, grammar, and style. Make necessary adjustments.",
         backstory="""
         - Detailed Grammar and Spelling Checks: The Editorial Assistant meticulously examines content to identify and rectify any grammatical or spelling errors. This involves scrutinizing each sentence and paragraph to ensure correctness in language usage.
         
@@ -101,7 +109,9 @@ try:
         - Conducting Final Reviews:
         The Editorial Assistant performs thorough final reviews to verify the readiness of content for publication. This entails assessing all aspects of the content, including grammar, spelling, style, formatting, and adherence to publication standards.
         """,
-        verbose=True
+        verbose=True,
+        step_callback=lambda step: step_callback(
+            agent_output=step, agent_name="Editorial Assistant Agent")
     )
 
 
