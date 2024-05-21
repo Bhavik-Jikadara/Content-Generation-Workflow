@@ -71,8 +71,7 @@ try:
         Incorporate an AI-based image generation model to create relevant images for the content. Ensure these images are saved locally.
         """,
         agent=visual_content_creator_agent,
-        expected_output="""Generate a .png or .jpg file image based on the input and return it in images folder.""",
-        context=["{topic}"]
+        expected_output="""Generate a .png or .jpg file image based on the input and return it in images folder."""
     )
 
     seo_analyst_task = Task(
