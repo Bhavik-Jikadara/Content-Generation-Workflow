@@ -32,7 +32,7 @@ To complete this project, you should understand Python programming, data manipul
 * [Click here to Serper API Key](https://serper.dev/api-key)  
     $ SERPER_API_KEY="Your-API-key"
   
-* [Click here to HUGGINGFACE_API_KEY](https://huggingface.co/settings/tokens))  
+* [Click here to HUGGINGFACE_API_KEY](https://huggingface.co/settings/tokens)  
     $ HUGGINGFACE_API_KEY="Your-API-key"
 -----------------------------------------------------------------------------------------------------------------         
 
